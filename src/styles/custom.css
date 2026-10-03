@@ -1,0 +1,246 @@
+/* Custom animations & interactive enhancements for React Portfolio */
+
+/* Hide browser default scrollbars while preserving scrolling */
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure smooth font smoothing */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* LOGO STYLING - EXACT MATCH TO ORIGINAL & PREVENT PURPLE VISITED LINK COLOR */
+.logo-block,
+a.logo-block,
+a.logo-block:link,
+a.logo-block:visited,
+a.logo-block:hover,
+a.logo-block:active {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  cursor: pointer !important;
+}
+
+.text-logo {
+  font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  line-height: 20px !important;
+  letter-spacing: -0.01em !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.logo-block:hover .text-logo {
+  opacity: 0.9 !important;
+}
+
+.text-underlogo {
+  font-family: 'Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 16px !important;
+  color: rgba(255, 255, 255, 0.45) !important;
+  text-decoration: none !important;
+}
+
+/* NAV PILL SLIDING ANIMATION */
+.nav-pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-indicator-pill {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.nav-toggle {
+  position: relative;
+  z-index: 2;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-toggle.active .text-nav-toggle {
+  color: #fff;
+  opacity: 1;
+}
+
+.nav-toggle:not(.active) .text-nav-toggle {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.nav-toggle:hover .text-nav-toggle {
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* BACK BUTTON IN NAVBAR */
+.nav-back-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 18px 8px 12px !important;
+  background: rgba(242, 242, 242, 0.12) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 100px !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.nav-back-button:hover {
+  background: rgba(242, 242, 242, 0.22) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  transform: translateX(-2px) !important;
+}
+
+.nav-back-button .icon-back-to-home {
+  transition: transform 0.3s ease;
+}
+
+.nav-back-button:hover .icon-back-to-home {
+  transform: translateX(-3px);
+}
+
+/* DOWNLOAD CV BUTTON */
+.chip-download-cv {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.chip-download-cv:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.18) !important;
+  transform: translateY(-1px) !important;
+}
+
+.chip-download-cv .icon-download {
+  transition: transform 0.3s ease;
+}
+
+.chip-download-cv:hover .icon-download {
+  transform: translateY(1px);
+}
+
+/* HERO WINDOW 3D TILT & GLARE */
+.container-hero-image {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.window-outline {
+  transform-style: preserve-3d;
+  transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.shine-wrapper {
+  pointer-events: none;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+/* PROJECT CARD HOVER ANIMATIONS */
+.project-card-outline {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card-outline:hover {
+  transform: translateY(-4px);
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.icon-projectcard-arrow {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .icon-projectcard-arrow {
+  transform: translate3d(3px, -3px, 0);
+}
+
+.project-thumbnail {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-thumbnail {
+  transform: scale(1.025);
+}
+
+.project-card-colour {
+  transition: opacity 0.5s ease;
+}
+
+.project-card:hover .project-card-colour {
+  opacity: 0.85;
+}
+
+/* LOADING OVERLAY ANIMATION */
+.loading-overlay {
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s;
+}
+
+.loading-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* MOBILE POPUP MENU ANIMATION */
+.mobile-popup-menu {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-popup-menu.open {
+  display: flex !important;
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1) !important;
+}
+
+/* DOWN ARROW BOUNCE ANIMATION */
+@keyframes heroBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.icon-scroll-down {
+  animation: heroBounce 2s ease-in-out infinite;
+}

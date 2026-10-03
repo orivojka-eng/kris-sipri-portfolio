@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+__pycache__
+*.pyc
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary conversion scratch scripts & raw html backups
+*.py
+discovered_assets.txt
+index_original.html
+info.html
+stadia-bluetooth.html
+test-hub-next.html
+spotlight.html
+corporate-cards-portal.html
+404.html
+401.html
+/css/
+/fonts/
+/images/
+/js/
